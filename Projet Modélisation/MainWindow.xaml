@@ -1,0 +1,63 @@
+﻿<Window x:Class="Projet_Modélisation.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Projet_Modélisation"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Background="#FFF2F2F2">
+        <TabControl Background="WhiteSmoke" SelectionChanged="TabControl_SelectionChanged">
+            <TabItem Header="Clients">
+                <Grid>
+                    <StackPanel Margin="10" Orientation="Horizontal">
+                        <Button Content="Ajouter un client" Click="NouveauClient_Click" Width="165" Margin="5" Height="24" VerticalAlignment="Top"/>
+                        <Button Content="Chercher un client" Click="Chercher_Click" Width="221" Margin="5" Height="24" VerticalAlignment="Top"/>
+                        <TextBox x:Name="Nom" Width="100" Margin="5" Height="24" VerticalAlignment="Top"/>
+                        <Button Content="Chercher l'historique d'un client" Click="Historique_Click" Width="189" Margin="5" Height="24" VerticalAlignment="Top"/>
+                    </StackPanel>
+                    <DataGrid x:Name="TabClients" Margin="10,43,10,10" AutoGenerateColumns="True" Background="White" IsReadOnly="True" ColumnWidth="*"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Produits">
+                <Grid>
+                    <StackPanel Margin="10" Orientation="Horizontal">
+                        <Button Content="Ajouter un produit" Click="NouveauProduit_Click" Width="211" Margin="5" Height="24" VerticalAlignment="Top"/>
+                    </StackPanel>
+                    <DataGrid x:Name="TabProduits" Margin="10,43,10,10" AutoGenerateColumns="True" Background="White" IsReadOnly="True" ColumnWidth="*"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Commandes">
+                <Grid>
+                    <StackPanel Margin="10" Orientation="Horizontal">
+                        <Button Content="Ajouter une commande" Click="NouvelleCommande_Click" Width="211" Margin="5" Height="24" VerticalAlignment="Top"/>
+                        <Button Content="Changer l'état d'une commande" Click="ChangerEtat_Click" Width="193" Margin="5" Height="24" VerticalAlignment="Top"/>
+                        <TextBox Text="1" x:Name="idcommande" Width="100" Margin="5" Height="24" VerticalAlignment="Top"/>
+                        <TextBox Text="CPAV" x:Name="etat" Width="100" Margin="5" Height="24" VerticalAlignment="Top"/>
+                    </StackPanel>
+                    <DataGrid x:Name="TabCommandes" Margin="10,43,10,10" AutoGenerateColumns="True" Background="White" IsReadOnly="True" ColumnWidth="*"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Stock">
+                <Grid>
+                    <StackPanel Margin="10" Orientation="Horizontal">
+                        <Button Content="Modifier les stocks" Click="AjouterStock_Click" Width="378" Margin="5" Height="24" VerticalAlignment="Top"/>
+                        <Button Content="Alertes" Click="Alertes_Click" Width="348" Margin="5" Height="24" VerticalAlignment="Top" Foreground="Red"/>
+                    </StackPanel>
+                    <DataGrid x:Name="TabStock" Margin="10,43,10,10" AutoGenerateColumns="True" Background="White" IsReadOnly="True" ColumnWidth="*"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Statistiques" Height="20" VerticalAlignment="Top">
+                <Grid>
+                    <StackPanel Margin="10" Orientation="Horizontal">
+                        <Button Content="Meilleurs Clients" Click="Meilleur_Click" Width="181" Margin="5" Height="24" VerticalAlignment="Top"/>
+                        <Button Content="Bouquets les mieux vendus " Click="Vendus_Click" Width="178" Margin="5" Height="24" VerticalAlignment="Top"/>
+                        <Button Content="Nombre bouquets vendus : " Click="Nombre_Click" Width="177" Margin="5" Height="24" VerticalAlignment="Top"/>
+                        <Button Content="@gmail union initiale P" Click="Filtre_Click" Width="190" Margin="5" Height="24" VerticalAlignment="Top"/>
+                    </StackPanel>
+                    <DataGrid x:Name="TabStatistiques"  Margin="10,43,10,10" AutoGenerateColumns="True" Background="White" IsReadOnly="True" ColumnWidth="*"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
